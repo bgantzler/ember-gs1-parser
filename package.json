@@ -23,11 +23,19 @@
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
-    "test:ember-compatibility": "ember try:each"
+    "test:ember-compatibility": "ember try:each",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,css,hbs}": "prettier --write",
+    "**/*.hbs": "ember-template-lint",
+    "**/*.js": "eslint --cache"
   },
   "dependencies": {
     "ember-cli-babel": "^7.26.3",
-    "ember-cli-htmlbars": "^5.7.1"
+    "ember-cli-htmlbars": "^5.7.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
