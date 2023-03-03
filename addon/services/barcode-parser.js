@@ -19,7 +19,7 @@ export default class BarcodeParserService extends Service {
 
   replaceSeparators(barcode) {
     this.groupSeparators.forEach((sep) => {
-      barcode = barcode.replace(sep, FNC1);
+      barcode = barcode.replaceAll(sep, FNC1);
     });
     return barcode;
   }
